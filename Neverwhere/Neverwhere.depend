@@ -1,5 +1,15 @@
 # depslib dependency file v1.0
-1747938828 source:c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\main.c
+1749005325 source:c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\main.c
+	"raylib.h"
+	"core.h"
+	"types.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdint.h>
+	<stdbool.h>
+
+1748909291 source:c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\core.c
 	"raylib.h"
 	"core.h"
 	<stdio.h>
@@ -8,13 +18,32 @@
 	<stdint.h>
 	<stdbool.h>
 
-1747938128 source:c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\core.c
-	"core.h"
+1747936732 c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\core.h
+
+1747938828 source:c:\users\gutsa\onedrive\햞ea de trabalho\neverwhere\main.c
 	"raylib.h"
+	"core.h"
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	<stdint.h>
 	<stdbool.h>
 
-1747936732 c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\core.h
+1747936732 c:\users\gutsa\onedrive\햞ea de trabalho\neverwhere\core.h
+
+1749003203 c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\types.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdint.h>
+	<stdbool.h>
+
+1749003782 source:c:\users\gutsa\onedrive\햞ea de trabalho\zinf\neverwhere\types.c
+	"raylib.h"
+	"types.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdint.h>
+	<stdbool.h>
 
