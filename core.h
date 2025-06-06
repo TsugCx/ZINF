@@ -1,7 +1,3 @@
-//
-// Created by gutsa on 05/06/2025.
-//
-
 #ifndef CORE_H
 #define CORE_H
 

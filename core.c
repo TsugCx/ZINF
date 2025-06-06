@@ -1,13 +1,5 @@
-//
-// Created by gutsa on 05/06/2025.
-//
-
 #include "raylib.h"
 #include "core.h"
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -67,30 +59,30 @@ void draw_menu(int select) {
 
     BeginDrawing();
 
-    DrawText("The Legend Of",       60, 160, 60, BLUE);
-    DrawText("Adventure Time",       160, 220, 120, BLUE);
+    DrawText("The Legend Of",       140, 180, 60, WHITE);
+    DrawText("Adventure Time",       140, 240, 120, RED);
 
-    DrawText("Iniciar",       500, 500, 25, WHITE);
-    DrawText("Placar",        500, 560, 25, WHITE);
-    DrawText("Configurações", 500, 620, 25, WHITE);
-    DrawText("Sair",          500, 680, 25, WHITE);
+    DrawText("Iniciar",       140, 500, 25, WHITE);
+    DrawText("Placar",        140, 560, 25, WHITE);
+    DrawText("Configurações", 140, 620, 25, WHITE);
+    DrawText("Sair",          140, 680, 25, WHITE);
 
     switch(select) {
 
         case 0:
-            DrawRectangle(500, 530, 76, 4, BLUE);
+            DrawRectangle(140, 530, 76, 4, RED);
         break;
 
         case 1:
-            DrawRectangle(500, 590, 68, 4, BLUE);
+            DrawRectangle(140, 590, 68, 4, RED);
         break;
 
         case 2:
-            DrawRectangle(500, 650, 180, 4, BLUE);
+            DrawRectangle(140, 650, 180, 4, RED);
         break;
 
         case 3:
-            DrawRectangle(500, 710, 50, 4, BLUE);
+            DrawRectangle(140, 710, 50, 4, RED);
         break;
     }
 

@@ -23,6 +23,7 @@ int main() {
         BeginDrawing();
 
         DrawRectangle(p1.xy.px, p1.xy.py, 50, 50, BLUE);
+        MousePositionForPlayerAttack(&p1);
         DrawGameBar();
 
         ClearBackground(BLACK);
