@@ -1,21 +1,21 @@
 [
 {
   "directory": "C:/Users/gutsa/Documents/TLOAT/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\main.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\main.c",
-  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\main.c",
-  "output": "CMakeFiles\\TLOAT.dir\\main.c.obj"
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\src\\main.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\src\\main.c",
+  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\src\\main.c",
+  "output": "CMakeFiles\\TLOAT.dir\\src\\main.c.obj"
 },
 {
   "directory": "C:/Users/gutsa/Documents/TLOAT/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\types.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\types.c",
-  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\types.c",
-  "output": "CMakeFiles\\TLOAT.dir\\types.c.obj"
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\src\\types.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\src\\types.c",
+  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\src\\types.c",
+  "output": "CMakeFiles\\TLOAT.dir\\src\\types.c.obj"
 },
 {
   "directory": "C:/Users/gutsa/Documents/TLOAT/cmake-build-debug",
-  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\core.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\core.c",
-  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\core.c",
-  "output": "CMakeFiles\\TLOAT.dir\\core.c.obj"
+  "command": "C:\\PROGRA~1\\JETBRA~1\\CLION2~1.4\\bin\\mingw\\bin\\gcc.exe -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include -g -std=gnu11 -fdiagnostics-color=always -o CMakeFiles\\TLOAT.dir\\src\\core.c.obj -c C:\\Users\\gutsa\\Documents\\TLOAT\\src\\core.c",
+  "file": "C:\\Users\\gutsa\\Documents\\TLOAT\\src\\core.c",
+  "output": "CMakeFiles\\TLOAT.dir\\src\\core.c.obj"
 },
 {
   "directory": "C:/Users/gutsa/Documents/TLOAT/cmake-build-debug",

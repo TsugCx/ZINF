@@ -25,11 +25,11 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} main.c
-        types.c
-        types.h
-        core.c
-        core.h)
+add_executable(${PROJECT_NAME} src/main.c
+        src/types.c
+        headers/types.h
+        src/core.c
+        headers/core.h)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)
 

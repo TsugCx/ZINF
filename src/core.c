@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include "core.h"
+#include "../headers/core.h"
 #include <stdint.h>
 #include <stdbool.h>
 

@@ -1,20 +1,21 @@
 #ifndef TYPE_H
 #define TYPE_H
 
-//Lista de bibliotecas utilizadas.
-#include "raylib.h"
+#include "../cmake-build-debug/_deps/raylib-src/src/raylib.h"
 #include <stdint.h>
 #include <stdbool.h>
 
-
-//Define a posição dos objetos no mapa, o nivel atual e a chamada de menu
 typedef struct global {
 
-    char map_call[24][16];
-    int8_t map_count;
-    bool menu_call;
+    int8_t count_map;
+    char map_name[18];
+    char phase_map[16][24];
 
 } GLOBAL;
+
+void RenameMap(GLOBAL *environment);//Atualiza o nome atual do arquivo do mapa a ser chamado para execução no jogo.
+void ReadMap(GLOBAL *environment);//Com base no nome do arquivo, busca um arquivo .txt correspondente nos diretorios e salva seus dados na matriz phase_map
+void DrawMap(GLOBAL *environment);
 
 void GlobalInit(GLOBAL *environment);
 void DrawMenu();
@@ -22,7 +23,7 @@ void DrawGameBar();
 
 typedef struct position {
 
-    float px, py;
+    int16_t position_x, position_y;
     char orientation;
 
 } POSITION;
@@ -32,9 +33,8 @@ typedef struct player {
 
     int8_t pv, pv_Max;
     bool weapon;
-    POSITION xy;
+    POSITION x_y;
     Rectangle hitbox;
-
 
 } PLAYER;
 
@@ -45,11 +45,10 @@ void MousePositionForPlayerAttack(PLAYER *p1);
 
 typedef struct monster {
 
-    uint8_t type;
-    int16_t px, py, pv;
+    char type;
+    int8_t hit_count;
+    int16_t px, py;
     char orientation;
-
-
     Rectangle hitbox;
 
 } MONSTER;
