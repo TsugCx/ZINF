@@ -12,14 +12,15 @@ int main() {
     InitWindow(width, height, "The Legend Of Adventure Time");
     SetTargetFPS(60);
 
-    PLAYER p1 = {100, 100, false, {600, 100, 'N'}, {p1.x_y.position_x = 550, p1.x_y.position_y = 350, 50, 50}};
+    PLAYER p1 = {600, 400, false, {600, 400, 'N'}, {0}};
+    p1.hitbox = (Rectangle){p1.x_y.position_x, p1.x_y.position_y, 50, 50};
     GLOBAL environment = {1, "../maps/mapa00.txt"};
 
     IntroductionMenu();
 
     while(!WindowShouldClose()) {
 
-        PlayerControl(&p1);
+        PlayerControl(&p1, &environment);
         RenameMap(&environment);
         ReadMap(&environment);
 

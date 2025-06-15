@@ -7,7 +7,9 @@ void introduction_scene();
 //Menu principal com opções para selecionar
 void IntroductionMenu();
 
-void draw_menu(int select);
+void DrawMenu(int select);
+
+void ErrorWarning();
 
 void settings();
 

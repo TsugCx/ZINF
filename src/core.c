@@ -24,11 +24,10 @@ void IntroductionMenu(){
         }
 
 
-
         switch(select) {
 
             case 0:
-                draw_menu(select);
+                DrawMenu(select);
 
             if(IsKeyPressed(KEY_ENTER))
                 continuos = false;
@@ -36,15 +35,15 @@ void IntroductionMenu(){
             break;
 
             case 1:
-                draw_menu(select);
+                DrawMenu(select);
             break;
 
             case 2:
-                draw_menu(select);
+                DrawMenu(select);
             break;
 
             case 3:
-                draw_menu(select);
+                DrawMenu(select);
 
             if(IsKeyPressed(KEY_ENTER))
                 CloseWindow();
@@ -55,7 +54,7 @@ void IntroductionMenu(){
     } while(continuos);
 }
 
-void draw_menu(int select) {
+void DrawMenu(int select) {
 
     BeginDrawing();
 
@@ -91,4 +90,16 @@ void draw_menu(int select) {
 
 }
 
+void ErrorWarning() {
 
+    do {
+        Rectangle rec = {100, 60, 1000, 720};
+
+        BeginDrawing();
+        ClearBackground(BLACK);
+
+
+        DrawRectangleRounded(rec, 2, 10, WHITE);
+        EndDrawing();
+    } while (!WindowShouldClose());
+}
