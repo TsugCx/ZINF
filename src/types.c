@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 //INICIO: Grupo de funções que controlam as chamadas de mapa, sua leitura e desenho na tela.
 void RenameMap(GLOBAL *environment) {//Subfunção de ReadMap();
@@ -57,6 +58,7 @@ void DrawMap(GLOBAL *environment) {
             switch (environment->phase_map[j][i]) {
                 case '\n':
                     environment->phase_map[j][i] = ' ';
+                break;
                 case ' ':
                     DrawRectangle(0 + tile_size * i, 60 + tile_size * j, tile_size, tile_size, DARKGREEN);
                 break;
@@ -74,7 +76,10 @@ void DrawMap(GLOBAL *environment) {
                 break;
 
                 case 'M':
+
                     DrawRectangle(0 + 50 * i, 60 + 50 * j, 50, 50, RED);
+                    InitMonster(tile_size, i, j, environment);
+
                     break;
 
                 case 'V':
@@ -125,7 +130,7 @@ void Position_Modifier_And_Hitbox_In_Y(PLAYER *p1, GLOBAL *environment, int8_t M
 
 void PlayerControl(PLAYER *p1, GLOBAL *environment) {
 
-    const int8_t MOVE_POSITIVE = 4, MOVE_NEGATIVE = -4;
+    const int8_t MOVE_POSITIVE = 3, MOVE_NEGATIVE = -3;
 
     if ((IsKeyPressed(KEY_D) || IsKeyDown(KEY_D)) && p1->x_y.position_x < 1150)//Move o player para a direita
         Position_Modifier_And_Hitbox_In_X(p1, environment, MOVE_POSITIVE);
@@ -189,8 +194,30 @@ void MousePositionForPlayerAttack(PLAYER *p1 ) {
     }
 }
 
+void InitMonster(int8_t tile_size, int8_t i, int8_t j, GLOBAL *environment) {
+
+    environment->Monster_list_on_the_map[environment->count_monster].type = 'M';
+    environment->Monster_list_on_the_map[environment->count_monster].hit_count = 0;
+
+    environment->Monster_list_on_the_map[environment->count_monster].x_y.orientation = 'N';
+    environment->Monster_list_on_the_map[environment->count_monster].x_y.position_x = i * tile_size;
+    environment->Monster_list_on_the_map[environment->count_monster].x_y.position_y = 60 + j * tile_size;
+
+    environment->Monster_list_on_the_map[environment->count_monster].hitbox.x = i * tile_size;
+    environment->Monster_list_on_the_map[environment->count_monster].hitbox.y = 60 + i * tile_size;
+    environment->Monster_list_on_the_map[environment->count_monster].hitbox.height = tile_size;
+    environment->Monster_list_on_the_map[environment->count_monster].hitbox.width = tile_size;
+
+}
+
+
+
 void DrawGameBar(){
 
     DrawRectangle(0, 0, 1200, 60, BLACK);
+    DrawText("MARCELINE",10, 20, 32, WHITE);
+    DrawText("PV",230, 30, 16, WHITE);
+    DrawRectangle(260, 30, 140, 16, DARKBLUE);
+    DrawRectangle(260, 30, 140, 16, BLUE);
 
 }

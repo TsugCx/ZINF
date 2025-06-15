@@ -1,26 +1,9 @@
 #ifndef TYPE_H
 #define TYPE_H
 
-#include "../cmake-build-debug/_deps/raylib-src/src/raylib.h"
+#include "raylib.h"
 #include <stdint.h>
 #include <stdbool.h>
-
-typedef struct global {
-
-    int8_t count_map, count_obstacle;
-    char map_name[18];
-    char phase_map[16][24];
-    Rectangle collision_map[16 * 24];
-
-} GLOBAL;
-
-void RenameMap(GLOBAL *environment);//Atualiza o nome atual do arquivo do mapa a ser chamado para execução no jogo.
-void ReadMap(GLOBAL *environment);//Com base no nome do arquivo, busca um arquivo .txt correspondente nos diretorios e salva seus dados na matriz phase_map.
-void DrawMap(GLOBAL *environment);//Desenha o mapa passado pela matriz utilizando os assets correspondes aos caracteres atrelados as posições [i][j].
-
-void GlobalInit(GLOBAL *environment);
-void DrawMenu();
-void DrawGameBar();
 
 typedef struct position {
 
@@ -39,20 +22,42 @@ typedef struct player {
 
 } PLAYER;
 
-void PlayerControl(PLAYER *p1, GLOBAL *environment);
-
-void MousePositionForPlayerAttack(PLAYER *p1);
-
-
 typedef struct monster {
 
     char type;
     int8_t hit_count;
-    int16_t px, py;
-    char orientation;
+    POSITION x_y;
     Rectangle hitbox;
 
 } MONSTER;
+
+
+typedef struct global {
+
+    int8_t count_map, count_obstacle, count_monster;
+    char map_name[18];
+    char phase_map[16][24];
+    Rectangle collision_map[16 * 24];
+
+    MONSTER Monster_list_on_the_map[10];
+
+} GLOBAL;
+
+void RenameMap(GLOBAL *environment);//Atualiza o nome atual do arquivo do mapa a ser chamado para execução no jogo.
+void ReadMap(GLOBAL *environment);//Com base no nome do arquivo, busca um arquivo .txt correspondente nos diretorios e salva seus dados na matriz phase_map.
+void DrawMap(GLOBAL *environment);//Desenha o mapa passado pela matriz utilizando os assets correspondes aos caracteres atrelados as posições [i][j].
+
+void GlobalInit(GLOBAL *environment);
+void DrawMenu();
+void DrawGameBar();
+
+
+void PlayerControl(PLAYER *p1, GLOBAL *environment);
+
+void MousePositionForPlayerAttack(PLAYER *p1);
+
+void InitMonster(int8_t tile_size, int8_t i, int8_t j, GLOBAL *environment);
+void RandomMovementGeneratorForMonsters(GLOBAL *environment);
 
 
 
