@@ -32,7 +32,7 @@ typedef struct monster {
 } MONSTER;
 
 
-typedef struct global {
+typedef struct map {
 
     int8_t count_map, count_obstacle, count_monster;
     char map_name[18];
@@ -41,23 +41,23 @@ typedef struct global {
 
     MONSTER Monster_list_on_the_map[10];
 
-} GLOBAL;
+} MAP;
 
-void RenameMap(GLOBAL *environment);//Atualiza o nome atual do arquivo do mapa a ser chamado para execução no jogo.
-void ReadMap(GLOBAL *environment);//Com base no nome do arquivo, busca um arquivo .txt correspondente nos diretorios e salva seus dados na matriz phase_map.
-void DrawMap(GLOBAL *environment);//Desenha o mapa passado pela matriz utilizando os assets correspondes aos caracteres atrelados as posições [i][j].
+void RenameMap(MAP *environment);//Atualiza o nome atual do arquivo do mapa a ser chamado para execução no jogo.
+void ReadMap(MAP *environment);//Com base no nome do arquivo, busca um arquivo .txt correspondente nos diretorios e salva seus dados na matriz phase_map.
+void DrawMap(MAP *environment);//Desenha o mapa passado pela matriz utilizando os assets correspondes aos caracteres atrelados as posições [i][j].
 
-void GlobalInit(GLOBAL *environment);
+void GlobalInit(MAP *environment);
 void DrawMenu();
 void DrawGameBar();
 
 
-void PlayerControl(PLAYER *p1, GLOBAL *environment);
+void PlayerControl(PLAYER *p1, MAP *environment);
 
 void MousePositionForPlayerAttack(PLAYER *p1);
 
-void InitMonster(int8_t tile_size, int8_t i, int8_t j, GLOBAL *environment);
-void RandomMovementGeneratorForMonsters(GLOBAL *environment);
+void InitMonster(int8_t tile_size, int8_t i, int8_t j, MAP *environment);
+void RandomMovementGeneratorForMonsters(MAP *environment);
 
 
 

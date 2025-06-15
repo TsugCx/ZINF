@@ -1,6 +1,6 @@
 #include "raylib.h"
 #include "../headers/core.h"
-#include "../headers/types.h"
+#include "../headers/map.h"
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -14,7 +14,7 @@ int main() {
 
     PLAYER p1 = {600, 400, false, {600, 400, 'N'}, {0}};
     p1.hitbox = (Rectangle){p1.x_y.position_x, p1.x_y.position_y, 50, 50};
-    GLOBAL environment = {1, "../maps/mapa00.txt"};
+    MAP environment = {1, "../maps/mapa00.txt"};
 
     IntroductionMenu();
 

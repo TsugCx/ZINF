@@ -57,9 +57,9 @@ build CMakeFiles/TLOAT.dir/src/main.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\TLOAT.dir
   OBJECT_FILE_DIR = CMakeFiles\TLOAT.dir\src
 
-build CMakeFiles/TLOAT.dir/src/types.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:/Users/gutsa/Documents/TLOAT/src/types.c || cmake_object_order_depends_target_TLOAT
+build CMakeFiles/TLOAT.dir/src/map.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:/Users/gutsa/Documents/TLOAT/src/map.c || cmake_object_order_depends_target_TLOAT
   DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
-  DEP_FILE = CMakeFiles\TLOAT.dir\src\types.c.obj.d
+  DEP_FILE = CMakeFiles\TLOAT.dir\src\map.c.obj.d
   FLAGS = -g -std=gnu11 -fdiagnostics-color=always
   INCLUDES = -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
   OBJECT_DIR = CMakeFiles\TLOAT.dir
@@ -73,6 +73,22 @@ build CMakeFiles/TLOAT.dir/src/core.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:
   OBJECT_DIR = CMakeFiles\TLOAT.dir
   OBJECT_FILE_DIR = CMakeFiles\TLOAT.dir\src
 
+build CMakeFiles/TLOAT.dir/src/player.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:/Users/gutsa/Documents/TLOAT/src/player.c || cmake_object_order_depends_target_TLOAT
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\TLOAT.dir\src\player.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = CMakeFiles\TLOAT.dir
+  OBJECT_FILE_DIR = CMakeFiles\TLOAT.dir\src
+
+build CMakeFiles/TLOAT.dir/src/monster.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:/Users/gutsa/Documents/TLOAT/src/monster.c || cmake_object_order_depends_target_TLOAT
+  DEFINES = -DGRAPHICS_API_OPENGL_33 -DPLATFORM_DESKTOP
+  DEP_FILE = CMakeFiles\TLOAT.dir\src\monster.c.obj.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  INCLUDES = -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src -IC:/Users/gutsa/Documents/TLOAT/cmake-build-debug/_deps/raylib-src/src/external/glfw/include
+  OBJECT_DIR = CMakeFiles\TLOAT.dir
+  OBJECT_FILE_DIR = CMakeFiles\TLOAT.dir\src
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TLOAT
@@ -81,7 +97,7 @@ build CMakeFiles/TLOAT.dir/src/core.c.obj: C_COMPILER__TLOAT_unscanned_Debug C$:
 #############################################
 # Link the executable TLOAT.exe
 
-build TLOAT.exe: C_EXECUTABLE_LINKER__TLOAT_Debug CMakeFiles/TLOAT.dir/src/main.c.obj CMakeFiles/TLOAT.dir/src/types.c.obj CMakeFiles/TLOAT.dir/src/core.c.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
+build TLOAT.exe: C_EXECUTABLE_LINKER__TLOAT_Debug CMakeFiles/TLOAT.dir/src/main.c.obj CMakeFiles/TLOAT.dir/src/map.c.obj CMakeFiles/TLOAT.dir/src/core.c.obj CMakeFiles/TLOAT.dir/src/player.c.obj CMakeFiles/TLOAT.dir/src/monster.c.obj | _deps/raylib-build/raylib/libraylib.a || _deps/raylib-build/raylib/external/glfw/src/glfw _deps/raylib-build/raylib/libraylib.a
   FLAGS = -g
   LINK_LIBRARIES = _deps/raylib-build/raylib/libraylib.a  -lopengl32  -lglu32  -lwinmm  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TLOAT.dir
