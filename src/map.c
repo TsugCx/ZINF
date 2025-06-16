@@ -59,9 +59,7 @@ void DrawMap(MAP *environment) {
                 case '\n':
                     environment->phase_map[j][i] = ' ';
                 break;
-                case ' ':
-                    DrawRectangle(0 + tile_size * i, 60 + tile_size * j, tile_size, tile_size, DARKGREEN);
-                break;
+
 
                 case 'P':
                     environment->collision_map[environment->count_obstacle] = (Rectangle){i * tile_size, 60 + j * tile_size, tile_size, tile_size};
@@ -76,11 +74,13 @@ void DrawMap(MAP *environment) {
                 break;
 
                 case 'M':
-
-                    DrawRectangle(0 + 50 * i, 60 + 50 * j, 50, 50, RED);
                     InitMonster(tile_size, i, j, environment);
+                    environment->count_monster++;
+                    environment->phase_map[j][i] = ' ';
 
-                    break;
+                case ' ':
+                    DrawRectangle(0 + tile_size * i, 60 + tile_size * j, tile_size, tile_size, DARKGREEN);
+                break;
 
                 case 'V':
                     DrawRectangle(0 + 50 * i, 60 + 50 * j, 50, 50, PINK);
@@ -100,7 +100,7 @@ void DrawMap(MAP *environment) {
 void DrawGameBar(){
 
     DrawRectangle(0, 0, 1200, 60, BLACK);
-    DrawText("MARCELINE",10, 20, 32, WHITE);
+    DrawText("FINN",10, 20, 32, WHITE);
     DrawText("PV",230, 30, 16, WHITE);
     DrawRectangle(260, 30, 140, 16, DARKBLUE);
     DrawRectangle(260, 30, 140, 16, BLUE);

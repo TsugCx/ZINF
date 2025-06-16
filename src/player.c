@@ -7,7 +7,8 @@
 
 
 //INICIO: Grupo de funções que definem as colisões, o deslocamento e seus limites pelo mapa para o jogador.
-bool PlayerWallCollision(PLAYER *p1, MAP *environment) {//Verifica se a posição atual da hitbox coincide com uma hitbox de parede interando no array que armazena as paredes para colisão.
+bool PlayerWallCollision(PLAYER *p1, MAP *environment) {
+    //Verifica se a posição atual da hitbox coincide com uma hitbox de parede interando no array que armazena as paredes para colisão.
 
     for (int16_t i = 0; i < environment->count_obstacle; i++) {
         if (CheckCollisionRecs(p1->hitbox, environment->collision_map[i])) {
@@ -17,7 +18,8 @@ bool PlayerWallCollision(PLAYER *p1, MAP *environment) {//Verifica se a posiçã
     return false;
 }
 
-void Position_Modifier_And_Hitbox_In_X(PLAYER *p1, MAP *environment, int8_t MOVE) {//Recebe um valor positvo ou negativo e atualiza a posição do jogador e de sua hitbox em X.
+void Position_Modifier_And_Hitbox_In_X(PLAYER *p1, MAP *environment, int8_t MOVE) {
+    //Recebe um valor positvo ou negativo e atualiza a posição do jogador e de sua hitbox em X.
 
     p1->x_y.position_x += MOVE;
     p1->hitbox.x = p1->x_y.position_x;
@@ -28,7 +30,8 @@ void Position_Modifier_And_Hitbox_In_X(PLAYER *p1, MAP *environment, int8_t MOVE
     }
 }
 
-void Position_Modifier_And_Hitbox_In_Y(PLAYER *p1, MAP *environment, int8_t MOVE) {//Recebe um valor positvo ou negativo e atualiza a posição do jogador e de sua hitbox em Y.
+void Position_Modifier_And_Hitbox_In_Y(PLAYER *p1, MAP *environment, int8_t MOVE) {
+    //Recebe um valor positvo ou negativo e atualiza a posição do jogador e de sua hitbox em Y.
 
     p1->x_y.position_y -= MOVE;
     p1->hitbox.y = p1->x_y.position_y;
@@ -40,26 +43,22 @@ void Position_Modifier_And_Hitbox_In_Y(PLAYER *p1, MAP *environment, int8_t MOVE
 }
 
 void PlayerControl(PLAYER *p1, MAP *environment) {
-
     const int8_t MOVE_POSITIVE = 3, MOVE_NEGATIVE = -3;
 
-    if ((IsKeyPressed(KEY_D) || IsKeyDown(KEY_D)) && p1->x_y.position_x < 1150)//Move o player para a direita
+    if ((IsKeyPressed(KEY_D) || IsKeyDown(KEY_D)) && p1->x_y.position_x < 1150) //Move o player para a direita
         Position_Modifier_And_Hitbox_In_X(p1, environment, MOVE_POSITIVE);
 
-    if ((IsKeyPressed(KEY_A) || IsKeyDown(KEY_A)) && p1->x_y.position_x > 0)//Move o player para a esquerda
+    if ((IsKeyPressed(KEY_A) || IsKeyDown(KEY_A)) && p1->x_y.position_x > 0) //Move o player para a esquerda
         Position_Modifier_And_Hitbox_In_X(p1, environment, MOVE_NEGATIVE);
 
-    if ((IsKeyPressed(KEY_W) || IsKeyDown(KEY_W)) && p1->x_y.position_y > 60)//Move o player para cima
+    if ((IsKeyPressed(KEY_W) || IsKeyDown(KEY_W)) && p1->x_y.position_y > 60) //Move o player para cima
         Position_Modifier_And_Hitbox_In_Y(p1, environment, MOVE_POSITIVE);
 
-    if ((IsKeyPressed(KEY_S) || IsKeyDown(KEY_S)) && p1->x_y.position_y < 810)//Move o player para baixo
+    if ((IsKeyPressed(KEY_S) || IsKeyDown(KEY_S)) && p1->x_y.position_y < 810) //Move o player para baixo
         Position_Modifier_And_Hitbox_In_Y(p1, environment, MOVE_NEGATIVE);
-
 }
-//FIM.
 
-void MousePositionForPlayerAttack(PLAYER *p1 ) {
-
+void MousePositionForPlayerAttack(PLAYER *p1) {
     if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
         int mouse_x = GetMouseX();
         int mouse_y = GetMouseY();
@@ -104,4 +103,3 @@ void MousePositionForPlayerAttack(PLAYER *p1 ) {
         }
     }
 }
-
