@@ -1,9 +1,9 @@
 #include "raylib.h"
 #include "../headers/core.h"
 #include "../headers/map.h"
+
 #include <stdbool.h>
-#include <stdio.h>
-#include <time.h>
+
 
 #define height 860
 #define width 1200
@@ -14,8 +14,8 @@ int main() {
     SetTargetFPS(60);
 
 
-    PLAYER p1 = {600, 400, false, {600, 400, 'N'}, {0}};
-    p1.hitbox = (Rectangle){p1.x_y.position_x, p1.x_y.position_y, 50, 50};
+    PLAYER p1 = {600, 400, 0,false, {600, 400, 'N'}, {0}, {0},{0}};
+    p1.hitbox = (Rectangle){p1.position.x, p1.position.y, 50, 50};
     MAP environment = {1, "../maps/mapa00.txt"};
 
     RenameMap(&environment);
@@ -25,13 +25,14 @@ int main() {
 
     while(!WindowShouldClose()) {
 
+        Knockback(&p1, &environment);
+
         BeginDrawing();
-        DrawMap(&environment);
+        DrawMap(&p1, &environment);
         PlayerControl(&p1, &environment);
-        DrawRectangle(p1.x_y.position_x, p1.x_y.position_y, 50, 50, BLUE);
+        DrawRectangle(p1.position.x, p1.position.y, 50, 50, BLUE);
         RandomMovementGeneratorForMonsters(&environment);
-        MousePositionForPlayerAttack(&p1);
-        DrawGameBar();
+        MousePositionForPlayerAttack( &p1,  &environment);        DrawGameBar();
 
         ClearBackground(BLACK);
         EndDrawing();

@@ -47,7 +47,7 @@ void GlobalInit(MAP *environment) {
 
 }
 
-void DrawMap(MAP *environment) {
+void DrawMap(PLAYER *p1, MAP *environment) {
 
     const int8_t lines = 16, columns = 24, tile_size = 50;
     environment->count_obstacle = 0;
@@ -77,9 +77,30 @@ void DrawMap(MAP *environment) {
                     InitMonster(tile_size, i, j, environment);
                     environment->count_monster++;
                     environment->phase_map[j][i] = ' ';
-
+                break;
                 case ' ':
                     DrawRectangle(0 + tile_size * i, 60 + tile_size * j, tile_size, tile_size, DARKGREEN);
+                break;
+
+                case 'J':
+                    DrawRectangle(0 + tile_size * i, 60 + tile_size * j, tile_size, tile_size, DARKGREEN);
+                    p1->position.x = 0 + tile_size * i;
+                    p1->position.y = 60 + tile_size * j;
+                    environment->phase_map[j][i] = ' ';
+
+                break;
+
+                case 'E':
+                    if (p1->weapon == false) {
+                        DrawRectangle(0 + 50 * i, 60 + 50 * j, 50, 50, GOLD);
+
+                    } else {
+                        environment->phase_map[j][i] = ' ';
+                    }
+                if ((p1->position.x / 50 * i) == i && (60 - p1->position.y / 50 * i) == j) {
+                    p1->weapon = true;
+                }
+
                 break;
 
                 case 'V':
