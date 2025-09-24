@@ -26,12 +26,14 @@ endif()
 # Our Project
 
 add_executable(${PROJECT_NAME} src/main.c
-        src/map.c
-        headers/map.h
-        src/core.c
+
+        headers/type.h
         headers/core.h
+        src/map.c
+        src/core.c
         src/player.c
         src/monster.c
+
 )
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} raylib)

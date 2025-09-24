@@ -1,15 +1,15 @@
                        
-     M        PPPP     
+     M          PPPP   
               M P      
                P       
-       M    V PP       
+       M    VPP        
           PPPP         
                  M     
               M        
                        
        J   P           
-   M     P             
-         E P           
+   M       P           
+          EP           
 PPPPPPPPPPPP           
                        
               M        

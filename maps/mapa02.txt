@@ -1,16 +1,16 @@
-PPPPPPPPPPPPPPPPPPPPPPPP
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-P                      P
-PPPPPPPPPPPPPPPPPPPPPPPP
+                       
+  PPPPPP   J     PPPPPP
+                       
+                       
+     M     V       M   
+    P               P  
+    P               P  
+  PPPPPP    M    PPPPPP
+    P               P  
+    P               P  
+    V M    V      M V  
+                       
+  PPPPPP         PPPPPP
+            E          
+                       
+                        

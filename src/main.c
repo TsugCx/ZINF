@@ -1,44 +1,57 @@
+#include <stdio.h>
+
 #include "raylib.h"
+#include "../headers/type.h"
 #include "../headers/core.h"
-#include "../headers/map.h"
 
-#include <stdbool.h>
+#define SCREEN_HEIGHT 860
+#define SCREE_WIDTH 1200
 
-
-#define height 860
-#define width 1200
 
 int main() {
+    //Pré-boot
+    InitWindow(SCREE_WIDTH, SCREEN_HEIGHT, "The Legend Of Adventure Time");
+    SetWindowIcon(LoadImage("../assets/finn_icon.png"));
 
-    InitWindow(width, height, "The Legend Of Adventure Time");
+
+    Texture2D finn = LoadTexture("../assets/sprite_finn.png");
+    Texture2D zombie = LoadTexture("../assets/sprite_zombie.png");
     SetTargetFPS(60);
 
+    while (!WindowShouldClose()) {
+        //loop principal do jogo.
+        IntroductionMenu();
 
-    PLAYER p1 = {600, 400, 0,false, {600, 400, 'N'}, {0}, {0},{0}};
-    p1.hitbox = (Rectangle){p1.position.x, p1.position.y, 50, 50};
-    MAP environment = {1, "../maps/mapa00.txt"};
+        MAP environment = {0};
+        CONTROL org = {0};
+        PLAYER p1 = {0};
 
-    RenameMap(&environment);
-    ReadMap(&environment);
+        RenameMap(&org);
+        ReadMap(&environment, &org, &p1);
+        SetupPlayer(&p1);
 
-    IntroductionMenu();
+        bool game_running = false;
 
-    while(!WindowShouldClose()) {
+        while (!WindowShouldClose()) {
 
-        Knockback(&p1, &environment);
+            if (IsKeyPressed(KEY_TAB)) {
+                game_running = !game_running;
+            }
 
-        BeginDrawing();
-        DrawMap(&p1, &environment);
-        PlayerControl(&p1, &environment);
-        DrawRectangle(p1.position.x, p1.position.y, 50, 50, BLUE);
-        RandomMovementGeneratorForMonsters(&environment);
-        MousePositionForPlayerAttack( &p1,  &environment);        DrawGameBar();
 
-        ClearBackground(BLACK);
-        EndDrawing();
+            if (game_running) {
+                BeginDrawing();
+                ClearBackground(BLACK);
+                PauseMenu(&game_running);
+                EndDrawing();
+            } else {
+                LogicProcessingCore(&environment, &org, &p1);
+                GraphicsProcessingCore(&environment, &org, &p1, finn, zombie);
+            }
 
+        }
     }
-
 
     return 0;
 }
+
